@@ -12,26 +12,29 @@
                 <th>Title</th>
                 <th>Reference</th>
                 <th>Description</th>
-                <th>Do you want to check this?</th>
+                <th>Checking now</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="table_body">
             {% for object in object_list %}
             <tr id="{{ object.id }}" class="{% if object.usable %} bg-success {% else %} bg-danger {% endif %}">
                 <td>{{ object.id }}</td>
                 <td>{{ object.title}}</td>
                 <td>{{ object.reference}}</td>
                 <td>{{ object.description }}</td>
-                <td><input type="radio" class="ml-5"></td>
-                {% endfor %}
+                <td><input type="checkbox" class="ml-5" {% if object.checking_now %} checked {% endif %}></td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
+    <hr>
 </div>
+    
 
 <!-- Table ends -->
 
 {% endblock content %}
 
 {% block javascript %}
+<script type="text/javascript" src="{% static 'main/js/scripts.js' %}"></script>
 {% endblock javascript %}

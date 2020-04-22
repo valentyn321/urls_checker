@@ -6,3 +6,4 @@ class Url(models.Model):
     reference = models.CharField(max_length=256, blank=False)
     description = models.TextField()
     usable = models.BooleanField(default=False)
+    checking_now = models.BooleanField(default=False)

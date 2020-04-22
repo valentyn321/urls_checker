@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     path('', m_views.UrlListView.as_view(), name="main_page"),
+
+    path('ajax/check/', m_views.ajax_check, name="ajax_check"),
 ]
