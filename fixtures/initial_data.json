@@ -1,0 +1,84 @@
+[
+{
+    "model": "main.url",
+    "pk": 1,
+    "fields": {
+        "title": "Google",
+        "reference": "https://www.google.com.ua",
+        "description": "Search system",
+        "usable": true,
+        "checking_now": true
+    }
+},
+{
+    "model": "main.url",
+    "pk": 2,
+    "fields": {
+        "title": "StackOverFlow",
+        "reference": "https://stackoverflow.com/",
+        "description": "Forum",
+        "usable": true,
+        "checking_now": true
+    }
+},
+{
+    "model": "main.url",
+    "pk": 3,
+    "fields": {
+        "title": "GitHub",
+        "reference": "https://github.com",
+        "description": "Version Control",
+        "usable": true,
+        "checking_now": true
+    }
+},
+{
+    "model": "main.url",
+    "pk": 4,
+    "fields": {
+        "title": "fdgfdg",
+        "reference": "https://www.ogogle.com/",
+        "description": "sadas",
+        "usable": false,
+        "checking_now": false
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$QMU1fYctTaDb$bIcmb0YMp7O/mN6XzFCOVXH1Q6wLWLb64xwhxdB8V9k=",
+        "last_login": "2020-04-22T13:29:21.254Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@admin.admin",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-04-22T09:38:40.480Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$yp002OKV0jK5$rhoZqSSrCdWPhR2GG6nfObeAoUT1P3pxEh8QmRTGhuQ=",
+        "last_login": "2020-04-22T13:20:35.061Z",
+        "is_superuser": false,
+        "username": "valentyn",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-04-22T12:14:44Z",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+}
+]

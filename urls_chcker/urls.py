@@ -21,12 +21,15 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from main import views as m_views
 from auth_system import views as a_views
+from django.contrib.auth.decorators import login_required
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    path('', m_views.UrlListView.as_view(), name="main_page"),
+    path('', login_required(m_views.UrlListView.as_view()), name="main_page"),
     path('ajax/check/', m_views.ajax_check, name="ajax_check"),
+    path('add_url/', m_views.add_url, name="add_url"),
 
     path('register/', a_views.RegisterTemplateView.as_view(), name="register"),
     path('login/', LoginView.as_view(template_name="auth_system/login.html"), name="login"),

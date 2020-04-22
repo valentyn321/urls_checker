@@ -1,8 +1,10 @@
 $( document ).ready(function() {
 
-    var csrfToken = $('[name="csrfmiddlewaretoken"]').val(); 
+    var csrfToken = $('[name="csrfmiddlewaretoken"]').val();
 
-    setInterval(checkUrls, 4000)
+    var time = document.getElementById("interval").value;
+
+    setInterval(checkUrls, time*1000)
 
     function radioCollector(){
             // here I will be stote id of rows, which have checked radio
@@ -21,15 +23,15 @@ $( document ).ready(function() {
         return id_for_check;
     }
 
-    var result = radioCollector();
-
-
-    function checkUrls() {   
+    
+    function checkUrls() {
+        var result = radioCollector();
+        var checked = JSON.stringify(result);
             $.ajax({
                 type: "POST",
                 url: 'ajax/check/',
                 dataType: "json",
-                data: { checked_ids: JSON.stringify(result)},
+                data: { checked_ids: checked},
                 success: function(response) {
                     $('#main_table').load("" + " #main_table");
                 }
