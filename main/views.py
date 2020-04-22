@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from main.models import Url
 
 
-def test_view(request):
-    return render(request, "main/urls_list.html", {})
+class UrlListView(ListView):
+    model = Url
+    template_name = 'main/urls_list.html'

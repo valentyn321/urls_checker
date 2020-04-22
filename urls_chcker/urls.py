@@ -23,5 +23,5 @@ from main import views as m_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    path('', m_views.test_view, name="main_page"),
+    path('', m_views.UrlListView.as_view(), name="main_page"),
 ]

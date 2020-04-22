@@ -4,7 +4,7 @@
 
 <!--Table starts-->
 
-<div class="mt-2 ml-3" id="urls_tab">
+<div class="mt-2" id="urls_tab">
     <table class="table table-striped" id="main_table">
         <thead>
             <tr>
@@ -16,12 +16,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Google</td>
-                <td>www.google.com</td>
-                <td>search system</td>
+            {% for object in object_list %}
+            <tr id="{{ object.id }}" class="{% if object.usable %} bg-success {% else %} bg-danger {% endif %}">
+                <td>{{ object.id }}</td>
+                <td>{{ object.title}}</td>
+                <td>{{ object.reference}}</td>
+                <td>{{ object.description }}</td>
                 <td><input type="radio" class="ml-5"></td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 </div>
