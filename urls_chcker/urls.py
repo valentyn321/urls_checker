@@ -18,12 +18,17 @@ from django.contrib import admin
 
 from django.urls import path
 
+from django.contrib.auth.views import LoginView, LogoutView
 from main import views as m_views
+from auth_system import views as a_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     path('', m_views.UrlListView.as_view(), name="main_page"),
-
     path('ajax/check/', m_views.ajax_check, name="ajax_check"),
+
+    path('register/', a_views.RegisterTemplateView.as_view(), name="register"),
+    path('login/', LoginView.as_view(template_name="auth_system/login.html"), name="login"),
+    path('logout/', LogoutView.as_view(), name="logout"),
 ]
